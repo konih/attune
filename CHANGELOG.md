@@ -6,6 +6,31 @@ The format is based on
 [Keep a Changelog](https://keepachangelog.com/en/1.1.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [0.1.33](https://github.com/attune-io/attune/compare/v0.1.32...v0.1.33) (2026-10-01)
+
+
+### Features
+
+* keep startup-boost samples out of the CPU percentile ([#898](https://github.com/attune-io/attune/issues/898)) ([060382a](https://github.com/attune-io/attune/commit/060382abf67b8b880975469b723e9f692c2e891f))
+* per-container CPU and memory settings ([#904](https://github.com/attune-io/attune/issues/904)) ([13b1135](https://github.com/attune-io/attune/commit/13b113558f56dbb76d0c3fd54a42842254f95bfd))
+* raise memory after an OOMKill on the original request ([#899](https://github.com/attune-io/attune/issues/899)) ([60ea11e](https://github.com/attune-io/attune/commit/60ea11e6cf0455a7dd82e4847ae2c15d53981832)), closes [#878](https://github.com/attune-io/attune/issues/878)
+* retune memory HPA targets after a resize ([#903](https://github.com/attune-io/attune/issues/903)) ([6f74284](https://github.com/attune-io/attune/commit/6f74284ae4604e845cb6bee18e95c8497dce12c6))
+* set a limit as a multiple of the request ([#897](https://github.com/attune-io/attune/issues/897)) ([8d4b95e](https://github.com/attune-io/attune/commit/8d4b95ef68635cc33c6fd8dea80f4102bc2d2a71))
+* shorten the history window during a usage surge ([#901](https://github.com/attune-io/attune/issues/901)) ([a92a44e](https://github.com/attune-io/attune/commit/a92a44e099ec4a08e428ea0395e11f9d525b7a0e))
+
+
+### Bug Fixes
+
+* count only this cycle's in-place resizes ([#890](https://github.com/attune-io/attune/issues/890)) ([8f5a7f8](https://github.com/attune-io/attune/commit/8f5a7f89ec2e9d909fb33a3b1de908ded7495ccf)), closes [#867](https://github.com/attune-io/attune/issues/867)
+* drop Datadog null points instead of storing them as zero ([#887](https://github.com/attune-io/attune/issues/887)) ([d56861c](https://github.com/attune-io/attune/commit/d56861cb9a94d430bc6cb1cd29d3728e459c3496)), closes [#872](https://github.com/attune-io/attune/issues/872)
+* recommend during a rollout and skip resize only while pods are replaced ([#895](https://github.com/attune-io/attune/issues/895)) ([76aaa79](https://github.com/attune-io/attune/commit/76aaa7930f5e3611c751a87d508df138bb7e53d0)), closes [#866](https://github.com/attune-io/attune/issues/866)
+* reject a zero cooldown instead of stopping reconcile ([#888](https://github.com/attune-io/attune/issues/888)) ([cd1ce5d](https://github.com/attune-io/attune/commit/cd1ce5dc95a93d25511d4b6b914c48c2922bd74a)), closes [#870](https://github.com/attune-io/attune/issues/870)
+* scale CloudWatch CPU as millicores by default ([#892](https://github.com/attune-io/attune/issues/892)) ([85a2a30](https://github.com/attune-io/attune/commit/85a2a301af4b7a1f055092f846ba7d9fdbff2659)), closes [#865](https://github.com/attune-io/attune/issues/865)
+* scale HPA CPU targets from the full pod total ([#896](https://github.com/attune-io/attune/issues/896)) ([4269a96](https://github.com/attune-io/attune/commit/4269a9690a334b02044a3ae2756f3d1824ed9f14))
+* size ReplicaSet pods at create when the selector matches ([#891](https://github.com/attune-io/attune/issues/891)) ([02d77f9](https://github.com/attune-io/attune/commit/02d77f994ade7a4e53422052bff6b922fd8475e0))
+* skip in-place resize when it would change QoS class ([#894](https://github.com/attune-io/attune/issues/894)) ([fa02aeb](https://github.com/attune-io/attune/commit/fa02aeb49f9e0a8abeadae194c07f42908ed430f))
+* stop treating an omitted maxAllowed as 4000m and 8Gi ([#893](https://github.com/attune-io/attune/issues/893)) ([4f44c4f](https://github.com/attune-io/attune/commit/4f44c4f413863f75f1abe8f08cde59ce7cafbef5))
+
 ## [0.1.32](https://github.com/attune-io/attune/compare/v0.1.31...v0.1.32) (2026-09-24)
 
 
